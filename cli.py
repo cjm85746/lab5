@@ -6,6 +6,18 @@ from logic import make_empty_board
 from logic import get_winner
 from logic import other_player
 
+"""
+Args: 
+    board: tic-tac-toe board
+    winner: check if there is winner, if there is a winner break the loop (true/false)
+    player: contain the players
+    count: check if the board is full (count >8 - board full)
+
+Return:
+until there is a winner or draw, the code keep shows and updates the tic-tac-toe so that two different players can play the game
+
+"""
+
 if __name__ == '__main__':
     board = make_empty_board()
     winner = None
@@ -42,11 +54,11 @@ if __name__ == '__main__':
         #Check if there is an winner
         if get_winner(board) != None:
             print ("The winner is", player)
-            winner =True
+            break
         # if the board is full and no winner the game is draw.
         if count ==9:
             print ("Draw")
-            winner = True
+            break
         
         # TODO: Update who's turn it is.
         player = other_player(player)

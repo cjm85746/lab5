@@ -16,9 +16,12 @@ class TestLogic(unittest.TestCase):
     def test_other_player(self):
         player = 'O'
         self.assertEqual(logic.other_player(player), 'X')
+    
+    def test_make_empty_board(self):
+        player = 'O'
+        self.assertEqual(logic.other_make_empty_board(), 'X')
 
     
-
 
 if __name__ == '__main__':
     unittest.main()
